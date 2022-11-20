@@ -1,0 +1,2 @@
+DEV server started at the port 4000.
+::ffff:127.0.0.1 - - [20/Nov/2022:10:15:25 +0000] "GET /s3-uploads/IMG_6dp6no.jpg HTTP/1.1" 200 203674 "-" "Thunder Client (https://www.thunderclient.com)"
