@@ -7,6 +7,7 @@ const notFoundMiddleware = require("./middleware/notFoundMiddleware");
 const globalErrorHandlerMiddleware = require("./middleware/globalErrorHandlerMiddleware");
 const awsS3OperationsRoutes = require("./routes/aws-s3-operations-routes");
 const { logStream } = require("./logs");
+const serverConfigurationController = require("./controllers/serverConfigurationController");
 
 const app = express();
 config();
@@ -14,6 +15,7 @@ config();
 app.use(helmet());
 app.use(morgan("combined", { stream: logStream }));
 app.use(awsS3OperationsRoutes);
+app.get("/", serverConfigurationController);
 app.use(notFoundMiddleware);
 app.use(globalErrorHandlerMiddleware);
 
