@@ -1,10 +1,12 @@
 const { s3 } = require("../aws/s3");
 
-const s3UploadsFileDeleteController = (req, res, next) => {
+const s3UploadsFileDeleteController = async (req, res, next) => {
   const { filename } = req.params;
 
   try {
-    s3.deleteObject({ Bucket: process.env.S3_BUCKET, Key: filename });
+    await s3
+      .deleteObject({ Bucket: process.env.S3_BUCKET, Key: filename })
+      .promise();
   } catch (error) {
     next(error);
   }

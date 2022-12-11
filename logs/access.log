@@ -1,1 +1,2 @@
 DEV server started at the port 4000.
+::ffff:127.0.0.1 - - [20/Nov/2022:10:52:06 +0000] "GET / HTTP/1.1" 200 427 "-" "Thunder Client (https://www.thunderclient.com)"
